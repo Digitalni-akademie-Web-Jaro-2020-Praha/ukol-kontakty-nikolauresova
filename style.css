@@ -1,10 +1,84 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
 
 body {
-	font-family: sans-serif;
-	font-size: 14px;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
 /* ---------------------------------------------------- */
+.round {
+  border-radius: 50%;
+}
+
+.kontakt {
+  border: 1px solid #e6e6fa;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  /*nejmenší*/
+  .kontakty {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .kontakt,
+  .nadpis {
+    width: 90%;
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    align-content: center;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 960px) {
+  .nadpis {
+    text-align: center;
+  }
+
+  .kontakty {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .kontakt {
+    padding: 15px;
+    margin: 10px;
+    width: calc(50% - 30px);
+  }
+  .picture {
+    float: left;
+    padding: 15px;
+  }
+  
+
+} /*střed*/
+
+@media screen and (min-width: 960px) {
+  /*největší*/
+  .kontakty {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    max-width: 1600px;
+  }
+  .kontakt {
+    width: 25%;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+  .nadpis {
+    text-align: center;
+  }
+}
